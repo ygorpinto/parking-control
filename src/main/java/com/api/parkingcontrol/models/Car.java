@@ -11,7 +11,7 @@ public class Car implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @OneToOne
-    private ParkingSpot parkingSpot;
+    @JoinColumn(name = "owner_id")
     private Owner owner;
 
     @Id
@@ -32,14 +32,6 @@ public class Car implements Serializable {
 
     @Column(nullable = false)
     private LocalDate date;
-
-    public ParkingSpot getParkingSpot() {
-        return parkingSpot;
-    }
-
-    public void setParkingSpot(ParkingSpot parkingSpot) {
-        this.parkingSpot = parkingSpot;
-    }
 
     public Owner getOwner() {
         return owner;

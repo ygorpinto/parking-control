@@ -10,10 +10,6 @@ import java.util.UUID;
 public class Owner implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @OneToOne
-    private Car car;
-    private ParkingSpot parkingSpot;
-
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
@@ -70,11 +66,4 @@ public class Owner implements Serializable {
         this.date = date;
     }
 
-    public ParkingSpot getParkingSpot() {
-        return parkingSpot;
-    }
-
-    public void setParkingSpot(ParkingSpot parkingSpot) {
-        this.parkingSpot = parkingSpot;
-    }
 }

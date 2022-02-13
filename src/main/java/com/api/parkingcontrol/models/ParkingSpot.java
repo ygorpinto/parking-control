@@ -11,8 +11,12 @@ public class ParkingSpot implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @OneToOne
-    private Car car;
+    @JoinColumn(name = "owner_id")
     private Owner owner;
+
+    @OneToOne
+    @JoinColumn(name = "car_id")
+    private Car car;
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
